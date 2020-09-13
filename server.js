@@ -1,10 +1,10 @@
 const express = require('express');
-const cors = require("cors");
+//const cors = require("cors");
 const app = express();
 const request = require('request');
 const config = require('config');
 const Razorpay = require('razorpay');
-app.use(cors());
+//app.use(cors());
 app.use(express.json());
 const PORT = process.env.PORT || 5000;
 
@@ -19,7 +19,7 @@ app.post('/order', (req,res) => {
             amount: req.body.amount * 100, // amount == Rs 10
             currency: "INR",
             receipt: "receipt#1",
-            payment_capture: 0
+            payment_capture: 1
         };
         instance.orders.create(options, async (err, order) => {
             if (err) {

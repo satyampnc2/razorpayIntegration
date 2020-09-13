@@ -1,11 +1,14 @@
 import React,{useContext} from 'react'
 import AlertContext from '../Context/AlertContext/alertContext'
+import {v4} from 'uuid'
 const Alert = () => {
     const alertContext = useContext(AlertContext)
     const {alert} = alertContext
     return (
-            alert != null && <div className={'alert all-center mx-2 bg-' + alert.type}>
-                {alert.msg}
+            alert.length > 0 && <div>
+                {
+                    alert.map(msg => <div key= {v4()} className={'alert all-center mx-2 bg-' + msg.type}>{msg.msg}</div> )
+                }
             </div>
         
     )

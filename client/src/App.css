@@ -367,7 +367,8 @@ input::placeholder {
 
 .alert {
   padding: 0.7rem;
-  height: 10vh;
+  overflow: auto;
+  display: block;
   margin: 1rem 0;
   opacity: 0.9;
   background: var(--light-color);

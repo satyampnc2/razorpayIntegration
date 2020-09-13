@@ -27,7 +27,7 @@ const Register = (props) => {
                     <input type="password" name="password" value={user.password} onChange={onChange}/>
                 </div>
                 <input type="submit" value="Login" className="btn btn-primary"/>
-                <p style={{float:"right",marginTop:"1rem"}}><Link to="/register">Do not have an account? Sign up? </Link></p>
+                <p style={{float:"right",marginTop:"1rem"}}><Link to="/">Do not have an account? Sign up? </Link></p>
             </form>
         </div>
     )
