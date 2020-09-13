@@ -5,8 +5,8 @@ Go to the folder where you want to clone the repository.
 Open that folder in terminal then run `git clone https://github.com/satyampnc2/razorpayIntegration.git` . Then open the project.
 
 ### Dependencies installation
-Install server side dependencies by running `npm serverinstall`.
-Install client side dependencies by running `npm clientinstall`
+Install server side dependencies by running `npm run serverinstall`.
+Install client side dependencies by running `npm run clientinstall`
 
 ### Start the express server and development server(React App)
 to start them together use `npm run dev`
