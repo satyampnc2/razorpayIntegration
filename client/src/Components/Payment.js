@@ -17,8 +17,8 @@ const Payment = () => {
             setAlert("Please Enter Valid Amount","danger")
             return;
         }
-        const API_URL = 'http://localhost:5000/'
-        const orderUrl = `${API_URL}order`;
+        //const API_URL = 'http://localhost:5000/'
+        const orderUrl = `/order`;
         const response = await Axios.post(orderUrl,{amount:payment.amount});
         const { data } = response;
         const options = {
@@ -29,7 +29,7 @@ const Payment = () => {
         handler: async (response) => {
             try {
             const paymentId = response.razorpay_payment_id;
-            const url = `${API_URL}capture/${paymentId}`;
+            const url = `/capture/${paymentId}`;
             const capturedResponse = await Axios.post(url, {amount:payment.amount})
             console.log(JSON.parse(capturedResponse.data));
             setAlert("Payment Successful !!","success")
