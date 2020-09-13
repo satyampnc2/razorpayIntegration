@@ -1,7 +1,8 @@
 # razorpayIntegration
 A react and Node.js app for showcasing razorpay integration
 
-Clone, download the project, then open it.
+Go to the folder where you want to clone the repository.
+Open that folder in terminal then run `git clone https://github.com/satyampnc2/razorpayIntegration.git` . Then open the project.
 
 ### Dependencies installation
 Install server side dependencies by running `npm serverinstall`.
