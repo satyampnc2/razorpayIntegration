@@ -37,31 +37,6 @@ app.post('/order', (req,res) => {
     }
 })
 
-app.post("/capture/:paymentId", (req, res) => {
-    try {
-      return request(
-       {
-       method: "POST",
-       url: `https://${config.key_id}:${config.key_secret}@api.razorpay.com/v1/payments/${req.params.paymentId}/capture`,
-       form: {
-          amount: req.body.amount * 100,
-          currency: "INR",
-        },
-      },
-     async (err, response, body) => {
-        if (err) {
-            return res.status(500).json({
-            message: "Something Went Wrong",
-            }); 
-        }
-        return res.status(200).json(body);
-      });
-    } catch (err) {
-      return res.status(500).json({
-        message: "Something Went Wrong",
-     });
-    }
-});
 
 app.listen(PORT, () => {
     console.log("Server started...");

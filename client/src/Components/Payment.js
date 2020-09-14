@@ -26,37 +26,6 @@ const Payment = () => {
     const onChange = e => {
         setPayment({[e.target.name] : e.target.value})
     }
-//     const onSubmit = async e => {
-//         e.preventDefault();
-//         if(payment.amount === '') {
-//             setAlert("Please Enter Valid Amount","danger")
-//             return;
-//         }
-//         //const API_URL = 'http://localhost:5000/'
-//         const orderUrl = `/order`;
-//         const response = await Axios.post(orderUrl,{amount:payment.amount});
-//         const { data } = response;
-//         const options = {
-//         key: "rzp_test_Baj0ZJ8G2mlZZy",
-//         name: "LEVEL",
-//         description: "Payment",
-//         order_id: data.id,
-//         handler: async (response) => {
-//             try {
-//             const paymentId = response.razorpay_payment_id;
-//             const url = `/capture/${paymentId}`;
-//             const capturedResponse = await Axios.post(url, {amount:payment.amount})
-//             console.log(JSON.parse(capturedResponse.data));
-//             setAlert("Payment Successful !!","success")
-//             } catch (err) {
-//             setAlert("Oops Server Error Occured :(","danger")
-//             }
-//         },
-//         };
-//         const rzp1 = new window.Razorpay(options);
-//         console.log("here")
-//         rzp1.open();
-//     } 
     const displayRazorpay = async (e) => {
         e.preventDefault();
         const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')
@@ -85,9 +54,6 @@ const Payment = () => {
                 description: 'Payment',
                 handler: (response) => {
                     console.log(response)
-                    // console.log(response.razorpay_payment_id)
-                    // alert()
-                    // alert(response.razorpay_signature)
                     setAlert(`Order_Id -> ${response.razorpay_order_id}`,"success");
                     setAlert(`Payment_Id -> ${response.razorpay_payment_id}`,"success");
                     setAlert(`Payment Successful !!`,"success")
